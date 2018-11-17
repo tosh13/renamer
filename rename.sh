@@ -1,5 +1,5 @@
 #!/bin/sh
-cd /Users/tosh/Desktop/toPicturesMovies
+cd ~/Desktop/toPicturesMovies
 # mkdir PNG > /dev/null 2>&1
 # mv *.[pP][nN][gG] PNG > /dev/null 2>&1
 TARGET_BODY=*
@@ -10,7 +10,7 @@ do
   SRCNAME=$TARGET
   DST=`exiftool -DateTimeOriginal $TARGET | cut -c35- | sed 's/://g' | sed 's/ /_/g'`
   if [ -z $DST ]; then
-    DST=`stat -f "%SB" -t "%Y%m%d_%H%M%S" $TARGET`
+    DST=`stat -f "%SB" -t "%y%m%d_%H%M%S" $TARGET`
   fi
   DSTNAME=$DST.$EXT
   for i in `seq 1 9`
