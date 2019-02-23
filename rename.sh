@@ -1,5 +1,5 @@
 #!/bin/sh
-cd ~/Desktop/toPicturesMovies
+cd "$*"
 # mkdir PNG > /dev/null 2>&1
 # mv *.[pP][nN][gG] PNG > /dev/null 2>&1
 TARGET_BODY=*
@@ -8,10 +8,10 @@ for TARGET in $TARGET_LIST
 do
   EXT=`echo $TARGET | awk -F. '{print $2}'`
   SRCNAME=$TARGET
-  DST=`exiftool -DateTimeOriginal $TARGET | cut -c35- | sed 's/://g' | sed 's/ /_/g'`
-  if [ -z $DST ]; then
-    DST=`stat -f "%SB" -t "%y%m%d_%H%M%S" $TARGET`
-  fi
+#  DST=`exiftool -DateTimeOriginal $TARGET | cut -c35- | sed 's/://g' | sed 's/ /_/g'`
+#  if [ -z $DST ]; then
+    DST=`stat -f "%SB" -t "%Y%m%d_%H%M%S" $TARGET`
+#  fi
   DSTNAME=$DST.$EXT
   for i in `seq 1 9`
   do
