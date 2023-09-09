@@ -1,5 +1,6 @@
 # renamer
 Rename photos and videos as YYMMDD_HHMMSS.ext
+
 put rename.sh to /usr/local/bin
 
 # story
