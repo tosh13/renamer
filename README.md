@@ -1,7 +1,10 @@
 # renamer
 Rename photos and videos as YYMMDD_HHMMSS.ext
 
-put rename.sh to /usr/local/bin
+# execution folder
+sudo mkdir -p /usr/local/bin
+sudo chmod +x /usr/local/bin/your_script.sh
+mv /Users/tosh/Desktop/rename.sh /usr/local/bin
 
 # story
 ## 2018.11.4
